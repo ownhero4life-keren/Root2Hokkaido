@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>2026 | Root2Hokkaido | 出発</title>
+<style>
+:root{--w:#7a1f2b;--w2:#5a1420;--c:#f6efe2;--c2:#ece1cd;--ink:#2b1a1c;--gold:#b08d4a;--me:#c0262d;--hb:#2a5d9f;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Shippori Mincho","Noto Serif TC","Hiragino Mincho ProN","Songti TC",serif;color:var(--ink);line-height:1.7;overflow-x:hidden;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+#bg{position:fixed;inset:0;z-index:-2;background:var(--c)}
+#snow{position:fixed;inset:0;z-index:-1;pointer-events:none;width:100%;height:100%}
+.sei{background:radial-gradient(circle at 50% 100%,transparent 0 30%,rgba(255,255,255,.13) 31% 34%,transparent 35% 52%,rgba(255,255,255,.13) 53% 56%,transparent 57%) 0 0/46px 23px,radial-gradient(circle at 50% 100%,transparent 0 30%,rgba(255,255,255,.13) 31% 34%,transparent 35% 52%,rgba(255,255,255,.13) 53% 56%,transparent 57%) 23px 11px/46px 23px,var(--w)}
+section{max-width:1040px;margin:0 auto;padding:72px 18px}
+h2{font-size:clamp(26px,5vw,40px);margin:0 0 6px;color:var(--w);letter-spacing:.12em;font-weight:800}
+.sub{margin:0 0 24px;color:#6b5656}
+.card{background:var(--c);border:1.5px solid var(--w);border-radius:4px 30px 4px 30px;padding:18px 20px;box-shadow:5px 5px 0 rgba(122,31,43,.18)}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;color:var(--c);padding:60px 16px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(30px,7.2vw,68px);margin:0;letter-spacing:.06em;font-weight:800;line-height:1.25}
+.hero h1 i{font-style:normal;color:var(--gold);padding:0 .25em}
+.hero h1 span{display:inline-block;transition:transform .3s}.hero h1 span:hover{transform:translateY(-8px) rotate(-6deg)}
+.hero p{margin:12px 0 30px;opacity:.9;letter-spacing:.2em}
+.seal{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.seal a{width:92px;text-decoration:none;color:var(--c);font-size:13px;display:block;transition:transform .25s}
+.seal a b{display:grid;place-items:center;width:72px;height:72px;margin:0 auto 4px;border-radius:50%;background:var(--c);color:var(--w);font-size:30px;border:3px double var(--w);outline:2px solid var(--c);transition:transform .3s}
+.seal a:hover b,.seal a:focus-visible b{transform:rotate(-12deg) scale(1.1)}
+.seal a:active{transform:translateY(4px)}
+.band{overflow:hidden;background:var(--w2);color:var(--c);transform:skewY(-2deg);margin:20px 0;padding:8px 0;white-space:nowrap;letter-spacing:.4em;font-size:20px}
+.band div{display:inline-block;will-change:transform}
+.who{position:fixed;top:calc(8px + env(safe-area-inset-top));right:8px;z-index:20;display:flex;gap:4px;background:var(--c);border:1.5px solid var(--w);border-radius:30px;padding:3px}
+.who button{border:0;border-radius:30px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer;background:transparent}
+.who .me.on{background:var(--me);color:#fff}.who .hb.on{background:var(--hb);color:#fff}
+button,.btn{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#map{width:100%;background:#e9d9b4;border:2px solid #8a6a3a;border-radius:6px;box-shadow:inset 0 0 40px rgba(120,80,30,.35)}
+.fp{stroke-dasharray:2 7;stroke-linecap:round;animation:fp 14s linear infinite}@keyframes fp{to{stroke-dashoffset:-180}}
+.pt{cursor:pointer}.pt circle{transition:r .2s}.pt:hover circle,.pt:focus circle{r:9}
+.days{display:flex;gap:12px;overflow-x:auto;padding:10px 4px 18px;scroll-snap-type:x mandatory}
+.days button{flex:0 0 150px;scroll-snap-align:start;text-align:left;padding:12px;background:var(--c);border:1.5px solid var(--w);border-radius:4px 22px 4px 22px;transition:transform .25s}
+.days button:hover{transform:translateY(-6px) rotate(-1.5deg)}.days small{display:block;color:#6b5656}
+.days button.cur{background:var(--w);color:var(--c)}.days button.cur small{color:#e9d9b4}
+.ov{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:10px}
+.ov b{font-size:24px;color:var(--w)}.ov small{color:#6b5656;display:block}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+input,select{font:inherit;padding:8px 10px;border:1.5px solid var(--w);border-radius:10px;background:#fffaf0;max-width:100%}
+.btn{border:1.5px solid var(--w);background:var(--w);color:var(--c);padding:8px 16px;border-radius:30px;font-size:15px;transition:transform .2s}.btn:hover{transform:translateY(-3px)}.btn.o{background:transparent;color:var(--w)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:760px){.grid2{grid-template-columns:1fr}.who button{padding:5px 9px}}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}.tabs button{border:1.5px solid var(--w);background:transparent;border-radius:30px;padding:5px 14px;font-size:14px}.tabs button.on{background:var(--w);color:var(--c)}
+#pie{width:100%;max-width:340px;display:block;margin:auto}#pie path{cursor:pointer;transition:transform .25s;transform-origin:110px 110px}#pie path:hover{transform:scale(1.04)}
+.leg{display:flex;flex-wrap:wrap;gap:6px;font-size:13px;justify-content:center}.leg span{cursor:pointer;padding:2px 8px;border-radius:20px;border:1px solid #c9b89a}.leg .on{background:var(--w);color:#fff}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:6px 4px;border-bottom:1px dashed #c9b89a;text-align:left}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%}
+.prev{background:var(--c2);border-radius:14px;padding:10px 14px;font-size:14px;margin-top:10px}
+.fig{width:100%;max-width:230px;display:block;margin:auto}
+.meter{height:14px;background:#ddd0b8;border-radius:10px;overflow:hidden;position:relative}.meter i{display:block;height:100%;background:var(--w);transition:width .4s}
+.warn{padding:10px 14px;border-radius:14px;font-weight:700;margin:10px 0}.warn.ok{background:#e5efd9;color:#34531f}.warn.hot{background:#fbdcd2;color:#8c2a10}.warn.cold{background:#d8e6f4;color:#1c4b7a}
+.items{display:flex;flex-wrap:wrap;gap:6px}.items button{border:1.5px solid var(--w);border-radius:20px;background:transparent;padding:4px 12px;font-size:14px}.items button.on{background:var(--w);color:var(--c)}
+.ck label{display:flex;gap:8px;align-items:flex-start;padding:4px 0;cursor:pointer}input[type=checkbox]{padding:0;border:0;background:none;width:22px;height:22px;accent-color:var(--w);flex:none;cursor:pointer}.ck input{margin-top:3px}
+.ck h3{margin:16px 0 4px;color:var(--w)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}.steps .card:nth-child(even){transform:translateY(18px) rotate(1.2deg)}.steps .card:nth-child(odd){transform:rotate(-1.2deg)}
+.cta{display:block;width:max-content;max-width:100%;margin:60px auto 20px;text-decoration:none;color:var(--c);font-size:22px;font-weight:800;padding:20px 40px;border-radius:60px;position:relative;overflow:hidden;background:var(--w);animation:bob 3.6s ease-in-out infinite;letter-spacing:.1em}
+.cta svg{position:absolute;left:0;bottom:-2px;width:200%;height:22px;animation:wv 4s linear infinite;fill:rgba(246,239,226,.28)}
+@keyframes bob{50%{transform:translateY(-12px) rotate(-1deg)}}@keyframes wv{to{transform:translateX(-50%)}}
+.modal{position:fixed;inset:0;background:rgba(43,26,28,.6);display:grid;place-items:center;z-index:50;padding:16px}.modal[hidden]{display:none}
+.box{background:var(--c);max-width:520px;width:100%;max-height:86vh;overflow:auto;border-radius:6px 34px 6px 34px;border:2px solid var(--w);padding:22px;animation:pop .3s}
+@keyframes pop{from{transform:scale(.85) rotate(-2deg);opacity:0}}
+.box a{color:var(--w)}.box li{margin:6px 0}
+footer{text-align:center;padding:30px;color:var(--c)}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+</style></head><body>
+<div id="bg"></div><canvas id="snow"></canvas>
+<div class="who" role="group" aria-label="記錄者"><button class="me on" data-u="me">我</button><button class="hb" data-u="hb">老公</button></div>
+
+<header class="hero sei"><div>
+<h1 id="ttl"></h1><p>2026.11.22 – 11.29　北海道 8天7夜 親子自駕</p>
+<nav class="seal"><a href="#route"><b>行</b>行程地圖</a><a href="#ledger"><b>帳</b>記帳</a><a href="#wx"><b>暖</b>氣溫穿搭</a><a href="#list"><b>備</b>Check list</a><a href="#story"><b>話</b>出發物語</a></nav></div></header>
+<div class="band"><div id="bandt">北海道 ❄ HOKKAIDO ❄ 雪の旅 ❄ 北海道 ❄ HOKKAIDO ❄ 雪の旅 ❄ 北海道 ❄ HOKKAIDO ❄ 雪の旅 ❄ 北海道 ❄ HOKKAIDO ❄</div></div>
+
+<section id="route" class="rv"><h2>行程地圖</h2><p class="sub">點地圖上的地點或下方每一天，查看行程並開啟 Google Maps。</p>
+<svg id="map" viewBox="0 0 360 300" role="img" aria-label="北海道路線圖"></svg>
+<div class="days" id="days"></div>
+<div class="ov" id="ov"></div></section>
+
+<section id="ledger" class="rv"><h2>記帳</h2><p class="sub">日圓記錄，自動換算台幣與退稅預覽。紅色＝我，藍色＝老公。</p>
+<div class="card"><div class="row">
+<select id="fd"></select><select id="ft"><option>餐飲</option><option>交通</option><option>住宿</option><option>購物</option><option>門票</option><option>租車油資</option><option>其他</option></select><select id="fm"><option>信用卡</option><option>現金</option><option>行動支付</option><option>Suica</option></select>
+<input id="fp" placeholder="地點" size="12"><input id="fa" type="number" inputmode="numeric" placeholder="含稅日圓" style="width:120px">
+<label><input type="checkbox" id="fx" checked> 可退稅</label><button class="btn" id="add">新增</button></div>
+<div class="row" style="margin-top:8px">匯率 1 JPY ＝ <input id="rate" type="number" step="0.001" value="0.21" style="width:84px"> TWD　退稅手續費 <input id="fee" type="number" value="0" style="width:60px">%</div>
+<div class="prev" id="prev">輸入金額即可預覽退稅前／後價格。</div></div>
+<div class="grid2" style="margin-top:20px"><div class="card"><div class="tabs" id="dim"></div><svg id="pie" viewBox="0 0 220 220"></svg><div class="leg" id="leg"></div></div>
+<div class="card"><div class="row" style="justify-content:space-between"><b id="fl">全部</b><span><button class="btn o" id="clr">清除篩選</button> <button class="btn" id="csv">匯出 CSV</button></span></div><div style="overflow-x:auto;max-height:340px;overflow-y:auto"><table id="tb"></table></div></div></div></section>
+
+<section id="wx" class="rv"><h2>氣溫與穿搭</h2><p class="sub">選擇日期，幫男性成人、女性成人、4歲女童搭配。穿太多會警示過熱，穿太少會警示偏冷。</p>
+<div class="tabs" id="wd"></div><div class="card"><div class="row" id="wi"></div>
+<div class="tabs" id="wp"><button data-p="m">男性成人</button><button data-p="f">女性成人</button><button data-p="g">女孩童（4歲）</button></div>
+<div class="grid2"><div><svg class="fig" id="fig" viewBox="0 0 120 232"></svg></div><div><div id="wn"></div><div class="meter"><i id="mt"></i></div><small id="ms"></small><div class="items" id="it" style="margin-top:12px"></div><p><button class="btn" id="rec">推薦穿搭</button> <button class="btn o" id="rst">全部脫掉</button></p></div></div></div></section>
+
+<section id="list" class="rv ck"><h2>Check list</h2><p class="sub">勾選會自動保存在這個瀏覽器。細節以官方與租車公司最新公告為準。</p>
+<div class="grid2" style="margin-bottom:18px"><div class="card"><b>✈ 機票</b><br>JX850　11/22 09:15 桃園T1 → 14:05 新千歲<br>JX851　11/29 15:20 新千歲 → 19:05 桃園T1<br><small>經濟艙・A350-900　機票 50,400</small></div><div class="card"><b>🚗 租車</b>　預約編號見確認信<br>Budget 新千歲空港店・千歳市美々758-206<br>取車櫃台：1樓3號到達大廳附近 Budget 櫃檯<br>11/22 15:00 取車　11/29 12:00 還車<br><a href="https://www.google.com/maps/search/?api=1&query=Budget+Rent+a+Car+New+Chitose+Airport" target="_blank" rel="noopener">地圖</a></div></div><div class="card" style="margin-bottom:18px"><b>🛍 Day1 Clover Mall（三井OUTLET PARK 札幌北廣島）</b><br>地址：北廣島市大曲幸町3-7-6。2F 202 mont-bell／mont-bell factory outlet（地圖紅圈處）。1F 以 COACH、UGG、BEAMS、Ralph Lauren 等品牌為主；2F 有運動用品、童裝與美食區。營業時間請出發前查官網。<br><a href="https://www.google.com/maps/search/?api=1&query=Mitsui+Outlet+Park+Sapporo+Kitahiroshima" target="_blank" rel="noopener">在 Google Maps 開啟</a></div><div class="grid2"><div class="card" id="ck1"></div><div class="card" id="ck2"></div></div>
+<h3 style="color:var(--w);margin-top:28px">每日清單</h3><div class="tabs" id="cd"></div><div class="card" id="ck3"></div></section>
+
+<section id="story" class="rv"><h2>出發物語</h2><p class="sub">四步驟，把整趟旅行放進口袋。</p>
+<div class="steps"><div class="card"><b>一、看路線</b><br>用地圖確認每天從哪裡到哪裡，一鍵導航。</div><div class="card"><b>二、記一筆</b><br>購物、餐飲、油資，邊走邊記，圓餅圖看花在哪。</div><div class="card"><b>三、看氣溫</b><br>出門前搭好大人與小孩的洋蔥式穿搭。</div><div class="card"><b>四、勾清單</b><br>證件、QR、租車、退稅，一項一項安心。</div></div>
+</section>
+<footer class="sei">北海道，我們來啦　❄　Root2Hokkaido 2026</footer>
+<div class="modal" id="md" hidden><div class="box" role="dialog" aria-modal="true"><div id="mb"></div><p style="text-align:right"><button class="btn" id="mc">關閉</button></p></div></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const ST={get(k,d){try{return JSON.parse(localStorage.getItem('r2h_'+k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem('r2h_'+k,JSON.stringify(v))}catch(e){}}};
+const gm=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+$('#ttl').innerHTML=[...'2026'].map(c=>`<span>${c}</span>`).join('')+'<i>|</i>'+[...'Root2Hokkaido'].map(c=>`<span>${c}</span>`).join('')+'<i>|</i>'+[...'出発'].map(c=>`<span>${c}</span>`).join('');
+const D=[
+{d:'11/22',w:'日',t:'抵達・取車・三井Outlet・札幌',h:'札幌諾特飯店',tp:[-1,6],s:[['09:15','JX850 起飛（桃園T1→新千歲）','新千歲機場'],['14:05','抵達新千歲機場','新千歲機場 國際線'],['15:00','1樓3號到達大廳附近 Budget 櫃檯（バジェット・レンタカー）取車','新千歲機場 バジェット・レンタカー'],['','前往三井OUTLET（Mont-bell、The North Face）','三井アウトレットパーク 札幌北広島 北広島市大曲幸町3-7-6'],['','入住札幌諾特飯店','札幌諾特飯店'],['','停車：Marutomo 6-chome Parking Lot（マルトモ６丁目パーキング）','マルトモ6丁目パーキング 札幌'],['','大通公園','大通公園 札幌'],['','狸小路商店街','狸小路商店街']],c:['入境後到1樓3號到達大廳附近找 Budget 櫃檯（預約編號見確認信，已辦事前チェックイン）','取車拍照檢查，確認雪胎、ETC、導航、兒童座椅','三井Outlet：Mont-bell、The North Face，購物保留退稅單據與護照','停車場先設好導航：マルトモ６丁目パーキング','超商買 SIM/確認 eSIM']},
+{d:'11/23',w:'一',t:'白色戀人公園・小樽',h:'小樽格蘭貝爾飯店',tp:[-1,5],s:[['10:00','白色戀人公園（製作磁鐵，需先選好照片）','白色戀人公園 札幌市西区宮の沢2条2丁目11-36'],['','前往小樽','小樽運河'],['','住吉神社','住吉神社 小樽市住ノ江1-4-15'],['','甜點：LeTAO 小樽洋菓子舖本店（雙層起司蛋糕；3樓免費觀景台）','LeTAO 本店 小樽'],['','甜點：北菓樓小樽本館（妖精之森年輪蛋糕、不思議泡芙）','北菓樓 小樽本館'],['','甜點：六花亭小樽運河店（蘭姆葡萄奶油夾心餅乾、草莓巧克力）','六花亭 小樽運河店'],['晚餐','Cafe Ball','Cafe Ball 小樽'],['晚餐','若雞時代','若雞時代 小樽'],['','入住小樽格蘭貝爾飯店','Granbell Hotel Otaru']],c:['出發前選好磁鐵照片','小樽坡道結冰：穿防滑鞋','先查好停車場位置','Cafe Ball／若雞時代 預約與營業時間']},
+{d:'11/24',w:'二',t:'羊蹄山・真狩村・洞爺湖',h:'洞爺湖萬世閣飯店',tp:[-2,5],s:[['早餐','Komeda\'s Coffee 小樽運河通店','Komeda\'s Coffee 小樽運河通店'],['','休息點：道の駅 あかいがわ（赤井川）','道の駅 あかいがわ'],['','相川ビューポイントパーキング','相川ビューポイントパーキング 羊蹄山'],['','真狩村','真狩村'],['','入住洞爺湖萬世閣飯店','洞爺湖萬世閣飯店']],c:['山路先看路況與封路','油量過半再出發','保暖：湖邊風大','確認晚餐/溫泉時段']},
+{d:'11/25',w:'三',t:'尼克斯海洋公園・樽前山神社',h:'千歲 JR 飯店',tp:[-1,6],s:[['','飯店早餐','洞爺湖萬世閣飯店'],['11:00','出發前往登別（約1小時）','登別'],['','尼克斯海洋公園（13:30海狗表演・14:15企鵝遊行・14:45海豚表演）','登別尼克斯海洋公園 登別市登別東町1丁目22'],['','約50分鐘前往樽前山神社','樽前山神社 苫小牧市高丘6'],['','入住千歲 JR 飯店','千歲 JR Inn'],['晚餐','sama 湯咖喱','sama 湯咖喱 千歲'],['','逛街：Aeon 千歲店（21:00關門）','イオン千歳店']],c:['表演時間：13:30／14:15／14:45','小孩午睡時間安排','日落前抵達神社','Aeon 21:00 關門，晚餐後安排逛街時間']},
+{d:'11/26',w:'四',t:'美瑛',h:'美瑛緩慢民宿',tp:[-4,3],s:[['','前往美瑛（約3小時）','美瑛駅'],['','美瑛市區：美瑛車站、美瑛神社','美瑛神社'],['15:00','美瑛緩慢民宿 Check in','美瑛緩慢民宿'],['','白鬚瀑布','白鬚瀑布 美瑛町'],['17:00','白金青池（17:00 點燈）','白金青池 美瑛町']],c:['結冰路段降速、拉長車距','出發前加滿油','民宿 15:00 check in 時間確認','晚餐食材先買好','青池17:00點燈，注意日落與雪地防滑']},
+{d:'11/27',w:'五',t:'聖誕樹・四季彩之丘・精靈露台',h:'富良野森林飯店',tp:[-4,3],s:[['','聖誕樹之木','聖誕樹之木 美瑛'],['','四季彩之丘','四季彩の丘 美瑛'],['中午','精靈露台','精靈露台 富良野'],['','入住富良野森林飯店','富良野森林飯店']],c:['四季彩之丘冬季營業情況先確認','精靈露台確認營業時間','手套備用一雙','拍照前先暖手']},
+{d:'11/28',w:'六',t:'札幌市',h:'札幌市區飯店',tp:[-1,6],s:[['','飯店早餐','富良野森林飯店'],['','札幌市區','札幌車站'],['','湯咖喱 奧芝商店（蝦湯）','奧芝商店 札幌']],c:['購物保留退稅單據','奧芝商店確認營業/排隊','行李重量預估','退稅現場辦理順序先看']},
+{d:'11/29',w:'日',t:'新千歲機場・返台',h:'返台',tp:[-1,6],s:[['','前往新千歲機場','新千歲機場'],['12:00前','Budget 新千歲空港店還車','バジェットレンタカー 新千歲空港店 千歳市美々758-206'],['15:20','JX851 起飛（19:05 抵桃園）','新千歲機場 國際線']],c:['還車前加滿油並拍照','退稅（VJW/櫃台）先辦完再託運','液體行李規定','護照、登機證隨身']}];
+const P=[['新千歲機場',42.78,141.69,'D1・D8'],['札幌',43.06,141.35,'D1・D7'],['小樽',43.19,140.99,'D2'],['洞爺湖',42.6,140.85,'D3'],['登別',42.45,141.15,'D4'],['千歲',42.82,141.65,'D4'],['富良野',43.34,142.38,'D5・D6'],['美瑛',43.59,142.47,'D5'],['Clover Mall 三井OUTLET',42.98,141.55,'D1'],];
+const X=la=>(la-140.6)*140+30,Y=a=>(43.85-a)*150+25;
+(function(){let m=$('#map'),pts=P.map(p=>[X(p[2]),Y(p[1])]);
+let path=[0,8,1,2,3,4,5,6,7,1,0].map(i=>pts[i]);let d='M'+path[0].join(' ');for(let i=1;i<path.length;i++){let a=path[i-1],b=path[i];d+=`Q${(a[0]+b[0])/2+(i%2?10:-10)} ${(a[1]+b[1])/2-8} ${b[0]} ${b[1]}`}
+m.innerHTML=`<defs><filter id="rg"><feTurbulence baseFrequency=".04" numOctaves="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter></defs>
+<path d="M-10 -10H370V310H-10z" fill="#e3cf9d" opacity=".5"/>
+<path filter="url(#rg)" d="M10 20L120 10 250 6 350 30 352 160 330 280 190 292 150 250 120 200 140 150 70 190 12 150z" fill="#f1e4bd" stroke="#8a6a3a" stroke-width="2"/>
+<path d="M20 180Q60 165 118 195 130 235 95 262" fill="#bcd0cf" opacity=".6"/><text x="48" y="232" font-size="10" fill="#6d8a89">內浦灣</text>
+<path class="fp" d="${d}" fill="none" stroke="#7a1f2b" stroke-width="2.4"/>
+${P.map((p,i)=>`<g class="pt" tabindex="0" role="button" aria-label="${p[0]}" data-i="${i}"><circle cx="${pts[i][0]}" cy="${pts[i][1]}" r="6" fill="#7a1f2b" stroke="#f6efe2" stroke-width="2"/><text x="${pts[i][0]+9}" y="${pts[i][1]+4}" font-size="11" fill="#3a2410" font-weight="700">${p[0]}</text></g>`).join('')}
+<text x="215" y="285" font-size="9" fill="#7a5a30" font-style="italic">旅の誓い：玩得開心，也別迷路。</text>`;
+$$('.pt').forEach(g=>{const f=()=>{const p=P[g.dataset.i];openM(`<h3>${p[0]}</h3><p>出現在：${p[3]}</p><p><a target="_blank" rel="noopener" href="${gm(p[0]+' 北海道')}">在 Google Maps 開啟</a></p>`)};g.onclick=f;g.onkeydown=e=>{if(e.key=='Enter'||e.key==' '){e.preventDefault();f()}}})})();
+const start=new Date('2026-11-22T00:00:00'),now=new Date(),di=Math.floor((now-start)/864e5),cur=Math.min(7,Math.max(0,di));
+$('#days').innerHTML=D.map((x,i)=>`<button data-i="${i}" class="${i==cur?'cur':''}"><b>Day${i+1}</b> ${x.d}（${x.w}）<small>${x.t}</small><small>宿：${x.h}</small></button>`).join('');
+$$('#days button').forEach(b=>b.onclick=()=>{const x=D[b.dataset.i];openM(`<h3>Day${+b.dataset.i+1} ${x.d}　${x.t}</h3><ul>${x.s.map(s=>`<li>${s[0]} ${s[1]}　<a target="_blank" rel="noopener" href="${gm(s[2])}">地圖</a></li>`).join('')}</ul><p>住宿：<a target="_blank" rel="noopener" href="${gm(x.h)}">${x.h}</a></p><p>氣溫：${x.tp[0]}～${x.tp[1]}°C（11月下旬平年參考）</p>`)});
+function openM(h){$('#mb').innerHTML=h;$('#md').hidden=false;$('#mc').focus()}
+const closeM=()=>{$('#md').hidden=true};$('#mc').onclick=closeM;$('#md').onclick=e=>{if(e.target.id=='md')closeM()};addEventListener('keydown',e=>{if(e.key=='Escape')closeM()});
+// user
+let U=ST.get('u','me');const setU=u=>{U=u;ST.set('u',u);$$('.who button').forEach(b=>b.classList.toggle('on',b.dataset.u==u))};$$('.who button').forEach(b=>b.onclick=()=>setU(b.dataset.u));setU(U);
+// ledger
+let L=ST.get('L',[]),F=null,dim='d';const UC={me:'#c0262d',hb:'#2a5d9f'},UN={me:'我',hb:'老公'};
+const PAL=['#7a1f2b','#c98b5a','#3b5b7a','#8d8a6b','#d9b66f','#b5485a','#5f3b44','#9fb3a0'];
+$('#fd').innerHTML=D.map((x,i)=>`<option value="${x.d}" ${i==cur?'selected':''}>${x.d} Day${i+1}</option>`).join('');
+const fee=()=>+$('#fee').value||0,rate=()=>+$('#rate').value||0;
+const calc=e=>{const r=e.x?e.a-Math.round(e.a/1.1):0,f=Math.round(r*fee()/100);return{r,net:e.a-r+f,f}};
+const fmt=n=>Math.round(n).toLocaleString();
+function prev(){const a=+$('#fa').value||0,e={a,x:$('#fx').checked},c=calc(e);$('#prev').innerHTML=a?`退稅前（含稅）：<b>¥${fmt(a)}</b>（約 NT$${fmt(a*rate())}）<br>未稅價 ¥${fmt(a-(a-Math.round(a/1.1)))}，預估退稅 ¥${fmt(c.r)}${c.f?`（手續費 ¥${c.f}）`:''}<br>退稅後實付：<b>¥${fmt(c.net)}</b>（約 NT$${fmt(c.net*rate())}）<br><small>退稅需於離境時完成手續，實際金額以店家/受理業者為準。</small>`:'輸入金額即可預覽退稅前／後價格。'}
+['fa','fx','rate','fee'].forEach(i=>$('#'+i).oninput=()=>{prev();draw()});
+$('#add').onclick=()=>{const a=+$('#fa').value;if(!a){$('#fa').focus();return}const ne={id:Date.now(),d:$('#fd').value,t:$('#ft').value,m:$('#fm').value,p:$('#fp').value||'未填',a,x:$('#fx').checked,u:U};L.push(ne);ST.set('L',L);sv(ne);$('#fa').value='';$('#fp').value='';prev();draw()};
+const DIMS={d:['日期',e=>e.d],t:['類型',e=>e.t],p:['地點',e=>e.p],u:['付款人',e=>UN[e.u]],m:['支付方式',e=>e.m||'未填']};
+$('#dim').innerHTML=Object.entries(DIMS).map(([k,v])=>`<button data-k="${k}">${v[0]}</button>`).join('');
+$$('#dim button').forEach(b=>b.onclick=()=>{dim=b.dataset.k;F=null;draw()});
+$('#clr').onclick=()=>{F=null;draw()};
+function draw(){$$('#dim button').forEach(b=>b.classList.toggle('on',b.dataset.k==dim));
+const list=F?L.filter(e=>DIMS[F.k][1](e)==F.v):L,tot=list.reduce((s,e)=>s+calc(e).net,0);
+const g={};L.forEach(e=>{const k=DIMS[dim][1](e);g[k]=(g[k]||0)+calc(e).net});const ent=Object.entries(g),sum=ent.reduce((s,x)=>s+x[1],0);
+const col=(k,i)=>dim=='u'?UC[k=='我'?'me':'hb']:PAL[i%PAL.length];
+let a0=-Math.PI/2,h='';ent.forEach(([k,v],i)=>{const a1=a0+v/sum*Math.PI*2-1e-4,R=100,r=64,c=Math.cos,s=Math.sin,lg=a1-a0>Math.PI?1:0;
+const p=ent.length==1?`<circle cx="110" cy="110" r="82" fill="none" stroke="${col(k,i)}" stroke-width="36" data-k="${k}" style="cursor:pointer"/>`:`<path data-k="${k}" fill="${col(k,i)}" opacity="${F&&F.k==dim&&F.v!=k?.3:1}" d="M${110+R*c(a0)} ${110+R*s(a0)}A${R} ${R} 0 ${lg} 1 ${110+R*c(a1)} ${110+R*s(a1)}L${110+r*c(a1)} ${110+r*s(a1)}A${r} ${r} 0 ${lg} 0 ${110+r*c(a0)} ${110+r*s(a0)}z"/>`;h+=p;a0=a1});
+if(!ent.length)h=`<circle cx="110" cy="110" r="82" fill="none" stroke="#ddd0b8" stroke-width="36"/>`;
+h+=`<text x="110" y="104" text-anchor="middle" font-size="11" fill="#6b5656">${F?F.v:'合計'}</text><text x="110" y="124" text-anchor="middle" font-size="17" font-weight="800" fill="#7a1f2b">¥${fmt(tot)}</text><text x="110" y="140" text-anchor="middle" font-size="10" fill="#6b5656">NT$${fmt(tot*rate())}</text>`;
+$('#pie').innerHTML=h;
+const pick=k=>{F=F&&F.k==dim&&F.v==k?null:{k:dim,v:k};draw()};
+$$('#pie [data-k]').forEach(n=>n.onclick=()=>pick(n.dataset.k));
+$('#leg').innerHTML=ent.map(([k,v],i)=>`<span data-k="${k}" class="${F&&F.v==k?'on':''}"><i class="dot" style="background:${col(k,i)}"></i> ${k} ¥${fmt(v)}</span>`).join('');
+$$('#leg span').forEach(n=>n.onclick=()=>pick(n.dataset.k));
+$('#fl').textContent=F?`篩選：${DIMS[F.k][0]}＝${F.v}`:'全部紀錄';
+$('#tb').innerHTML=`<tr><th>日期</th><th>類型</th><th>地點</th><th>支付</th><th>實付¥</th><th></th></tr>`+list.map(e=>`<tr><td>${e.d}</td><td>${e.t}</td><td>${e.p}</td><td>${e.m||''}</td><td><i class="dot" style="background:${UC[e.u]}"></i> ${fmt(calc(e).net)}</td><td><button aria-label="刪除" data-id="${e.id}" style="border:0;background:none;color:var(--w)">✕</button></td></tr>`).join('');
+$$('#tb button').forEach(b=>b.onclick=()=>{L=L.filter(e=>e.id!=b.dataset.id);ST.set('L',L);dl(b.dataset.id);draw()});
+ov()}
+$('#csv').onclick=()=>{const q=s=>'"'+String(s).replace(/"/g,'""')+'"';const rows=[['日期','類型','地點','付款人','支付方式','含稅日圓','預估退稅','退稅後日圓','台幣','可退稅']].concat(L.map(e=>{const c=calc(e);return[e.d,e.t,e.p,UN[e.u],e.m||'',e.a,c.r,c.net,Math.round(c.net*rate()),e.x?'是':'否']}));
+const b=new Blob(['\ufeff'+rows.map(r=>r.map(q).join(',')).join('\n')],{type:'text/csv'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='hokkaido-ledger.csv';a.click()};
+// weather
+const IT=[['thermal','發熱內衣',1.5,'top'],['tee','T恤',1,'top'],['sweater','毛衣',2,'top'],['fleece','刷毛外套',2,'top'],['down','羽絨外套',3.5,'top'],['legg','發熱褲',1.5,'bot'],['pants','長褲',1,'bot'],['snow','防水雪褲',2.5,'bot'],['boots','防水雪靴',1.2,'acc'],['scarf','圍巾',.7,'acc'],['hat','毛帽',.7,'acc'],['gl','手套',.7,'acc'],['cowboy','牛仔帽',.7,'acc']];
+let wd=cur,wp='m',SEL={m:[],f:[],g:[]};
+const need=d=>Math.max(2,(18-(D[d].tp[0]*.4+D[d].tp[1]*.6-2))*.55);
+const col2={thermal:'#4b4b57',tee:'#e9c46a',sweater:'#b5485a',fleece:'#8a9a7b',down:'#7a1f2b',legg:'#3a3a48',pants:'#3b5b7a',snow:'#2f3d56',boots:'#5a3a2a',scarf:'#d9b66f',hat:'#c0262d',gl:'#2b1a1c',cowboy:'#a0693b'};
+function figSvg(){const s=SEL[wp],h=i=>s.includes(i),k=wp=='g',skin='#f2cfae',hair=wp=='m'?'#2b1a1c':'#4a2c1e';let o=k?'<g stroke="#3a2410" stroke-width="3" stroke-linejoin="round" transform="translate(21 82) scale(.65)">':'<g stroke="#3a2410" stroke-width="2.2" stroke-linejoin="round">';
+if(wp=='f'||k)o+=`<rect x="37" y="22" width="46" height="${k?46:60}" rx="18" fill="${hair}"/>`;
+o+=`<rect x="53" y="44" width="14" height="14" fill="${skin}"/><rect x="26" y="58" width="12" height="54" rx="6" fill="${skin}"/><rect x="82" y="58" width="12" height="54" rx="6" fill="${skin}"/><rect x="42" y="120" width="16" height="92" rx="6" fill="${skin}"/><rect x="62" y="120" width="16" height="92" rx="6" fill="${skin}"/><rect x="39" y="206" width="22" height="14" rx="6" fill="${skin}"/><rect x="59" y="206" width="22" height="14" rx="6" fill="${skin}"/>
+<rect x="40" y="54" width="40" height="58" rx="10" fill="#fbf4e4" stroke="#d8c9a8"/><rect x="40" y="108" width="40" height="20" rx="6" fill="#fbf4e4" stroke="#d8c9a8"/>
+<circle cx="60" cy="32" r="21" fill="${skin}"/><path d="M39 30Q60 4 81 30Q60 16 39 30z" fill="${hair}"/><circle cx="51" cy="34" r="3" fill="#2b1a1c" stroke="none"/><circle cx="69" cy="34" r="3" fill="#2b1a1c" stroke="none"/><circle cx="44" cy="42" r="3.5" fill="#f4a6a0" stroke="none"/><circle cx="76" cy="42" r="3.5" fill="#f4a6a0" stroke="none"/><path d="M53 42Q60 49 67 42" fill="none" stroke-width="2"/><circle cx="32" cy="112" r="7" fill="${skin}"/><circle cx="88" cy="112" r="7" fill="${skin}"/>`;
+if(k)o+=`<circle cx="34" cy="36" r="9" fill="${hair}"/><circle cx="86" cy="36" r="9" fill="${hair}"/><circle cx="47" cy="13" r="5" fill="#e8798a"/>`;
+const t=(id,l)=>h(id)?l:'';
+o+=t('legg',`<rect x="41" y="110" width="18" height="102" rx="7" fill="${col2.legg}"/><rect x="61" y="110" width="18" height="102" rx="7" fill="${col2.legg}"/>`);
+o+=t('pants',`<rect x="39" y="108" width="42" height="12" fill="${col2.pants}"/><rect x="40" y="110" width="20" height="102" rx="7" fill="${col2.pants}"/><rect x="60" y="110" width="20" height="102" rx="7" fill="${col2.pants}"/>`);
+o+=t('snow',`<rect x="37" y="106" width="46" height="14" fill="${col2.snow}"/><rect x="37" y="110" width="24" height="104" rx="9" fill="${col2.snow}"/><rect x="59" y="110" width="24" height="104" rx="9" fill="${col2.snow}"/>`);
+o+=t('boots',`<rect x="36" y="200" width="26" height="26" rx="7" fill="${col2.boots}"/><rect x="58" y="200" width="26" height="26" rx="7" fill="${col2.boots}"/>`);
+const arm=(c,len,w)=>`<rect x="${38-w}" y="56" width="${w+2}" height="${len}" rx="7" fill="${c}"/><rect x="80" y="56" width="${w+2}" height="${len}" rx="7" fill="${c}"/>`;
+o+=t('thermal',`<rect x="39" y="54" width="42" height="60" rx="10" fill="${col2.thermal}"/>`+arm(col2.thermal,54,12));
+o+=t('tee',`<rect x="38" y="54" width="44" height="58" rx="10" fill="${col2.tee}"/>`+arm(col2.tee,24,13));
+o+=t('sweater',`<rect x="37" y="54" width="46" height="64" rx="10" fill="${col2.sweater}"/>`+arm(col2.sweater,56,14)+`<rect x="37" y="110" width="46" height="8" fill="#9a3a4a"/>`);
+o+=t('fleece',`<rect x="36" y="54" width="48" height="66" rx="10" fill="${col2.fleece}"/>`+arm(col2.fleece,58,15)+`<path d="M60 56V120" stroke="#6b7a5c" stroke-width="2"/>`);
+o+=t('down',`<rect x="32" y="52" width="56" height="74" rx="16" fill="${col2.down}"/>`+arm(col2.down,60,18)+[72,88,104].map(y=>`<path d="M32 ${y}H88" stroke="#5a1420" stroke-width="2"/>`).join('')+`<path d="M60 54V126" stroke="#f6efe2" stroke-width="2"/>`);
+o+=t('scarf',`<rect x="44" y="48" width="32" height="12" rx="6" fill="${col2.scarf}"/><rect x="66" y="56" width="9" height="26" rx="4" fill="${col2.scarf}"/>`);
+o+=t('hat',`<path d="M38 28a22 22 0 0 1 44 0z" fill="${col2.hat}"/><rect x="36" y="24" width="48" height="8" rx="4" fill="#8f1b21"/><circle cx="60" cy="6" r="5" fill="#f6efe2"/>`);
+o+=t('cowboy',`<ellipse cx="60" cy="20" rx="36" ry="7" fill="${col2.cowboy}"/><path d="M42 20Q42 -6 60 -4Q78 -6 78 20z" fill="${col2.cowboy}"/><rect x="43" y="11" width="34" height="5" fill="#7a1f2b"/>`);
+o+=t('gl',`<circle cx="32" cy="114" r="8" fill="${col2.gl}"/><circle cx="88" cy="114" r="8" fill="${col2.gl}"/>`);
+return o+'</g>'}
+function wx(){const x=D[wd],n=need(wd);$('#wi').innerHTML=`<b>Day${wd+1} ${x.d}　${x.t}</b>　${x.tp[0]}～${x.tp[1]}°C（11月下旬平年參考，出發前請查即時預報）`;
+$$('#wd button,#wp button').forEach(b=>b.classList.toggle('on',b.dataset.i==wd||b.dataset.p==wp));
+const s=SEL[wp],sc=1+s.reduce((t,i)=>t+IT.find(a=>a[0]==i)[2],0),d=sc-n;
+$('#fig').innerHTML=figSvg();$('#mt').style.width=Math.min(100,sc/(n+4)*100)+'%';$('#ms').textContent=`保暖值 ${sc.toFixed(1)}／建議 ${n.toFixed(1)}`;
+let c='ok',m='👍 剛剛好，舒適。';if(d<-2.5){c='cold';m='🥶 偏冷：再加一層保暖或帽、手套。'}else if(d>2.5){c='hot';m='🥵 穿太多，容易過熱悶汗：車內與室內暖氣強，建議減一層，改洋蔥式穿法。'}
+if(wp=='g'&&d>1.5&&c=='ok')m+=' 小朋友容易流汗，記得準備替換內衣。';
+$('#wn').innerHTML=`<div class="warn ${c}">${m}</div>`;
+$('#it').innerHTML=IT.map(a=>`<button data-id="${a[0]}" class="${s.includes(a[0])?'on':''}">${a[1]}</button>`).join('');
+$$('#it button').forEach(b=>b.onclick=()=>{const i=b.dataset.id;SEL[wp]=s.includes(i)?s.filter(z=>z!=i):s.concat(i);wx();ov()})}
+$('#wd').innerHTML=D.map((x,i)=>`<button data-i="${i}">Day${i+1} ${x.d}</button>`).join('');$$('#wd button').forEach(b=>b.onclick=()=>{wd=+b.dataset.i;wx();ov()});
+$$('#wp button').forEach(b=>b.onclick=()=>{wp=b.dataset.p;wx()});
+$('#rst').onclick=()=>{SEL[wp]=[];wx()};
+$('#rec').onclick=()=>{const n=need(wd),ord=['thermal','pants','boots','sweater','legg','down','gl','hat','scarf','fleece','snow'];let s=[],sc=1;for(const i of ord){if(sc>=n-.4)break;s.push(i);sc+=IT.find(a=>a[0]==i)[2]}SEL[wp]=s;wx()};
+// checklist
+const C1=['✈ 去程 JX850　11/22 桃園 T1 09:15 → 新千歲國際航廈 14:05（A350-900，經濟艙，約3小時50分）','✈ 回程 JX851　11/29 新千歲國際航廈 15:20 → 桃園 T1 19:05（約4小時45分；建議13:30前完成報到）','護照（含4歲女兒；建議效期6個月以上）','Visit Japan Web 完成登錄：入境審查與海關申報，截圖/保存 QR code（www.vjw.digital.go.jp）','每人（含兒童）各自的 QR code 已存手機並截圖離線備份','eSIM／漫遊與行動電源','日幣現金、信用卡（海外手續費確認）','旅平險、行程/訂房/租車確認信'];
+const C2=['租車 Budget 新千歲空港店（預約編號見確認信）：11/22 15:00 取車、11/29 12:00 還車；千歳市美々758-206；電話 050-1721-8873','租車證件：護照、台灣駕照正本＋日文譯本（請依租車公司規定備齊）','冬季配備：確認為冬季雪胎，備雪刷、除冰','車型 SUV/一般車、AT、禁菸車；兒童座椅：已訂ジュニアシート×1，取車時確認適合4歲女兒的身高體重','已含カーナビ×1、ETC車載器×1（ETC卡請向櫃台確認）；已選免責補償＋セーフティパック；方案為事前チェックイン，出發前先線上完成','取車拍照、檢查油量；還車前加滿油並保留收據','雪地駕駛：慢速、拉長車距、避免急煞，山路先查封路'];
+const C3=['新退稅制（自2026/11/1購買起）：店內先付含稅價，不再當場免稅','購物時出示護照，請店員辦理退稅登錄，保存單據','出境時在機場辦理：新千歲可用 Visit Japan Web 線上手續，或到機場退稅櫃台/終端機','經海關確認後，退款由受理業者退回（如信用卡），部分業者可能收手續費','退稅商品需帶出境，請勿先拆開託運前未確認規定','規則以日本觀光廳／國稅庁與機場公告為準，出發前再查一次'];
+const CK=ST.get('ck',{});function ckHtml(el,title,arr,pre){$(el).innerHTML=(title?`<h3>${title}</h3>`:'')+arr.map((t,i)=>`<label><input type="checkbox" data-k="${pre}${i}" ${CK[pre+i]?'checked':''}><span>${t}</span></label>`).join('')}
+function rck(){ckHtml('#ck1','出發前',C1,'a');$('#ck2').innerHTML='';ckHtml('#ck2','租車',C2,'b');$('#ck2').insertAdjacentHTML('beforeend','<h3>退稅流程（新制）</h3>'+C3.map((t,i)=>`<label><input type="checkbox" data-k="c${i}" ${CK['c'+i]?'checked':''}><span>${t}</span></label>`).join(''));
+cdr()}
+let cd=cur;$('#cd').innerHTML=D.map((x,i)=>`<button data-i="${i}">Day${i+1}</button>`).join('');
+function cdr(){$$('#cd button').forEach(b=>b.classList.toggle('on',b.dataset.i==cd));ckHtml('#ck3',`Day${cd+1}　${D[cd].t}`,D[cd].c.concat(['早餐/補給：水、零食、尿布濕紙巾','手機電量與離線地圖','雪靴、手套是否乾燥（夜間烘乾）']),'d'+cd+'_');bind()}
+$$('#cd button').forEach(b=>b.onclick=()=>{cd=+b.dataset.i;cdr()});
+function bind(){$$('.ck input[data-k]').forEach(i=>i.onchange=()=>{CK[i.dataset.k]=i.checked;ST.set('ck',CK);sck();ov()})}
+// overview
+function ov(){const tot=L.reduce((s,e)=>s+calc(e).net,0),me=L.filter(e=>e.u=='me').reduce((s,e)=>s+calc(e).net,0),all=C1.length+C2.length+C3.length,dn=Object.keys(CK).filter(k=>CK[k]&&/^[abc]/.test(k)).length,x=D[wd],n=need(wd);
+const left=Math.ceil((start-now)/864e5);
+$('#ov').innerHTML=`<div class="card"><small>${left>0?'距離出發':'旅程進行中'}</small><b>${left>0?left+' 天':'Day'+(cur+1)}</b><small>下一站：${D[cur].t}</small></div>
+<div class="card"><small>Day${wd+1} 氣溫</small><b>${x.tp[0]}～${x.tp[1]}°C</b><small>建議保暖值 ${n.toFixed(1)}</small></div>
+<div class="card"><small>花費合計</small><b>¥${fmt(tot)}</b><small><i class="dot" style="background:${UC.me}"></i> 我 ¥${fmt(me)}　<i class="dot" style="background:${UC.hb}"></i> 老公 ¥${fmt(tot-me)}</small></div>
+<div class="card"><small>清單進度</small><b>${Math.round(dn/all*100)}%</b><small>${dn}／${all} 項</small></div>`}
+// scroll bg, band, reveal
+const BG=['#f6efe2','#f1e0dc','#e4e9ef','#efe3c9','#f0d9d6'];const hx=h=>[1,3,5].map(i=>parseInt(h.substr(i,2),16));
+function bgc(){const m=document.documentElement.scrollHeight-innerHeight,p=m>0?scrollY/m:0,f=p*(BG.length-1),i=Math.min(BG.length-2,Math.floor(f)),t=f-i,a=hx(BG[i]),b=hx(BG[i+1]);$('#bg').style.background=`rgb(${a.map((v,j)=>Math.round(v+(b[j]-v)*t))})`;if(!RM)$('#bandt').style.transform=`translateX(${-scrollY*.25%600}px)`}
+let lastY=scrollY,imp=0;addEventListener('scroll',()=>{bgc();imp+=(lastY-scrollY)*-.05;lastY=scrollY},{passive:true});bgc();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}));$$('.rv').forEach(e=>io.observe(e));
+// snow
+(function(){const c=$('#snow'),g=c.getContext('2d');let W,H,fl=[],mx=-999,my=-999;const N=innerWidth<700?45:90;
+function rs(){W=c.width=innerWidth;H=c.height=innerHeight}rs();addEventListener('resize',rs);
+for(let i=0;i<N;i++)fl.push({x:Math.random()*W,y:Math.random()*H,r:1+Math.random()*3,v:.3+Math.random()*.8,ph:Math.random()*6});
+addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
+function dr(){g.clearRect(0,0,W,H);g.fillStyle='rgba(255,255,255,.92)';g.strokeStyle='rgba(122,31,43,.18)';
+fl.forEach(f=>{if(!RM){f.ph+=.01;f.x+=Math.sin(f.ph)*.4;f.y+=f.v-imp;const dx=f.x-mx,dy=f.y-my,d=Math.hypot(dx,dy);if(d<90){f.x+=dx/d*(90-d)*.06;f.y+=dy/d*(90-d)*.06}
+if(f.y>H+5){f.y=-5;f.x=Math.random()*W}if(f.y<-10){f.y=H+5}if(f.x<-5)f.x=W+5;if(f.x>W+5)f.x=-5}
+g.beginPath();g.arc(f.x,f.y,f.r,0,7);g.fill();g.stroke()});imp*=.92;if(!RM)requestAnimationFrame(dr)}dr();})();
+// hero tilt
+if(!RM)$$('.seal a').forEach(a=>{a.addEventListener('pointermove',e=>{const r=a.getBoundingClientRect();a.style.transform=`rotate(${((e.clientX-r.left)/r.width-.5)*10}deg)`});a.addEventListener('pointerleave',()=>a.style.transform='')});
+prev();draw();wx();rck();
+let DB=null;const sv=e=>{DB&&DB.doc('ledger/'+e.id).set(e).catch(()=>{})},dl=id=>{DB&&DB.doc('ledger/'+id).delete().catch(()=>{})},sck=()=>{DB&&DB.doc('trip/ck').set({m:CK}).catch(()=>{})};
+(async()=>{try{if(!window.claude)return;DB=await claude.use('db');if(!DB)return;let first=true;
+DB.collection('ledger').onSnapshot(q=>{const a=q.docs.map(d=>d.data());if(first&&!a.length&&L.length){L.forEach(sv);first=false;return}first=false;L=a.sort((x,y)=>x.id-y.id);ST.set('L',L);draw()},()=>{});
+DB.doc('trip/ck').onSnapshot(d=>{if(d.exists){CK=d.data().m||{};ST.set('ck',CK);rck();ov()}},()=>{})}catch(e){}})();
+</script></body></html>
